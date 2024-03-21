@@ -40,7 +40,7 @@ You'll need to add the following to `Cargo.toml`:
 [dependencies]
 futures = "0.3"
 progenitor = { git = "https://github.com/oxidecomputer/progenitor" }
-reqwest = { version = "0.11", features = ["json", "stream"] }
+reqwest = { version = "0.12", features = ["json", "stream"] }
 serde = { version = "1.0", features = ["derive"] }
 ```
 
@@ -133,7 +133,7 @@ You'll need to add the following to `Cargo.toml`:
 [dependencies]
 futures = "0.3"
 progenitor-client = { git = "https://github.com/oxidecomputer/progenitor" }
-reqwest = { version = "0.11", features = ["json", "stream"] }
+reqwest = { version = "0.12", features = ["json", "stream"] }
 serde = { version = "1.0", features = ["derive"] }
 
 [build-dependencies]
@@ -174,6 +174,7 @@ cargo progenitor -i sample_openapi/keeper.json -o keeper -n keeper -v 0.1.0
 ```
 
 ... or within the repo:
+
 ```
 cargo run --bin cargo-progenitor -- progenitor -i sample_openapi/keeper.json -o keeper -n keeper -v 0.1.0
 ```
@@ -184,9 +185,9 @@ Options `--license` and `--registry-name` may also be used to improve metadata
 before publishing the static crate.
 
 The output will use the published `progenitor-client` crate by default
-if progenitor was built from a released version.  However, when using progenitor
+if progenitor was built from a released version. However, when using progenitor
 built from the repository, the `progenitor-client` will be inlined into the
-static crate by default.  The command line flag `--include-client` can be used
+static crate by default. The command line flag `--include-client` can be used
 to override the default behaviour.
 
 To ensure the output has no persistent dependency on Progenitor, enable `--include-client`.
@@ -199,7 +200,7 @@ bytes = "1.3.0"
 chrono = { version = "0.4.23", default-features=false, features = ["serde"] }
 futures-core = "0.3.25"
 percent-encoding = "2.2.0"
-reqwest = { version = "0.11.13", default-features=false, features = ["json", "stream"] }
+reqwest = { version = "0.12.0", default-features=false, features = ["json", "stream"] }
 serde = { version = "1.0.152", features = ["derive"] }
 serde_urlencoded = "0.7.1"
 ```
